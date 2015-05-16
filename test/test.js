@@ -5,15 +5,23 @@
 var QuickE2eTest = require('../'),
 	expect = require('chai').expect;
 
+
 describe('Quick e2e Test', function() {
 	var config,
-		expectedOutput;
+		expectedOutput,
+		rawString;
 
 	beforeEach(function() {
 		config = require('./data/config');
 		expectedOutput = require('fs').readFileSync('./data/expectedOutput.js', {
 			encoding: 'utf8'
 		});
+		rawString = function(str) {
+			return str.replace(/\t/g, '\\t')
+				.replace(/\r\n/g, '\\r\\n')
+				.replace(/\r/g, '\\r')
+				.replace(/\n/g, '\\n');
+		};
 	});
 
 
@@ -24,11 +32,11 @@ describe('Quick e2e Test', function() {
 		result = QuickE2eTest.generate(config);
 
 		result = result[0];
-		result = result.replace(/\n+/gi, '\n').replace(/^\t/gi, '');
-		expectedOutput = expectedOutput.replace(/\n+/gi, '\n');
+		result = result.replace(/\n+/gi, '').replace(/\n\t\n/gi, '\n').replace(/\t+/gi, '');
+		expectedOutput = expectedOutput.replace(/\n+/gi, '').replace(/\t+/gi, '');
 
-		console.log('result', '\\' + result);
-		console.log('expectedOutput', expectedOutput);
+		// console.log('result       .', rawString(result));
+		// console.log('expectedOutput', rawString(expectedOutput));
 
 		expect(result).to.be.eql(expectedOutput);
 

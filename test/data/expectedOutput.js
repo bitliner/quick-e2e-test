@@ -9,18 +9,10 @@ describe('QuickE2eTest', function() {
 
 
 		element(by.css('.username')).sendKeys('username');
-
-
-
 		element(by.css('.password')).sendKeys('password');
-
-
-
 		element(by.css('.submit')).click();
 
-
-
-		element(browser.getUrl()).toBe('/product-list');
+		expect(browser.getUrl())['toBe']('/product-list');
 
 
 	});

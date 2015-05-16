@@ -1,18 +1,38 @@
 /* jshint ignore: start */
 'use strict';
 
+<%
+var mappingOperandus={
+	'url':'browser.getUrl()'
+}
+var mappingOp={
+	'is':'toBe'
+}
+function transformOperandus(input){
+	return mappingOperandus[input];
+}
+function transformOp(input){
+	return mappingOp[input];
+}
+
+%>
+
 describe('<%= name %>', function() {
-	<% its.forEach(function(it){ %>
+<% its.forEach(function(it){ %>
 
 
-	it("<%- it.scenario %>", function() {
+it("<%- it.scenario %>", function() {
 	<% it.test.actions.forEach(function(action){ %>
-	<% if (action.name==='click'){ %>
-		element(by.css('<%= action.obj %>')).click();
-	<% } %>
-	<% if (action.name==='send'){ %>
-		element(by.css('<%= action.location %>')).sendKeys('<%= action.obj %>');
-	<% } %>	
+		<% if (action.name==='click'){ %>
+			element(by.css('<%= action.obj %>')).click();
+		<% } %>
+		<% if (action.name==='send'){ %>
+			element(by.css('<%= action.location %>')).sendKeys('<%= action.obj %>');
+		<% } %>	
+	<% }); %>
+
+	<% it.test.conditions.forEach(function(condition){ %>
+		expect(<%= transformOperandus(condition.left) %>)['<%= transformOp(condition.op) %>']('<%= condition.right %>');
 	<% }); %>
 			
 		
