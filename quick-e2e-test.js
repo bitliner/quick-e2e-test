@@ -19,6 +19,9 @@ var QuickE2eTest = {
 			var result = {};
 
 			result.name = testName;
+			result.beforeEaches = config[testName].beforeEach.map(function(singleBeforeEach) {
+				return Parser.parse(singleBeforeEach);
+			});
 			result.its = config[testName].test.map(function(scenario) {
 
 				Logger.debug('Generating test from', scenario);

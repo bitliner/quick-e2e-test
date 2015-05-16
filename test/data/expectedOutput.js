@@ -3,6 +3,10 @@
 
 describe('Login', function() {
 
+	beforeEach(function() {
+		browser.get('/login');
+	});
+
 	it("when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'", function() {
 
 
