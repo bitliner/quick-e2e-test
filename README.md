@@ -1,7 +1,7 @@
 quick-e2e-test
 =========================
 
-It allows you to build end-to-end test specifying just the scnearios to test in natural language (text).
+It allows you to build end-to-end test specifying just the scenarios to test in natural language (text).
 
 # Requirements
 
@@ -80,4 +80,4 @@ Example `config.json`:
 ```
 ## 2. Generate end-to-end test 
 
-Run `quick-e2e-test ./config.json` and it will generate in the current folder the file for e2e-test.
+Run `quick-e2e-test ./config.json` and it will generate in the current folder the file `test.js` containing the end-to-end test.
