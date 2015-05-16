@@ -6,7 +6,8 @@ var Parser = require('./lib/parser/parser'),
 	Generator = require('./lib/generator/generator'),
 	Logger = require('logb').getLogger(module.filename),
 	fs = require('fs'),
-	path = require('path');
+	path = require('path'),
+	jformatter = require('jformatter');
 
 
 var QuickE2eTest = {
@@ -36,6 +37,7 @@ var QuickE2eTest = {
 
 		rawTestString = Generator.generate(testMetadata);
 
+		rawTestString = jformatter.format(rawTestString);
 
 		return rawTestString;
 
