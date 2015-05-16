@@ -7,6 +7,9 @@
 		"test": "cd test && mocha ./test.js",
 		"generate-parser": "cd lib && cd parser && pegjs ./grammar.pegjs ./parser.js"
 	},
+	"bin": {
+		"quick-e2e-test": "bin/quick-e2e-test"
+	}
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
