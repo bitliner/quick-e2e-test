@@ -9,7 +9,7 @@
 	},
 	"bin": {
 		"quick-e2e-test": "bin/quick-e2e-test"
-	}
+	},
 	"author": "",
 	"license": "ISC",
 	"dependencies": {

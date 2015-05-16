@@ -1,31 +1,23 @@
 0 info it worked if it ends with ok
 1 verbose cli [ '/home/bitliner/.nvm/v0.10.36/bin/node',
 1 verbose cli   '/home/bitliner/.nvm/v0.10.36/bin/npm',
-1 verbose cli   'run-script',
-1 verbose cli   'generate-parser' ]
+1 verbose cli   'publish' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.36
-4 verbose run-script [ 'pregenerate-parser',
-4 verbose run-script   'generate-parser',
-4 verbose run-script   'postgenerate-parser' ]
-5 info pregenerate-parser quick-e2e-test@1.0.0
-6 info generate-parser quick-e2e-test@1.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info quick-e2e-test@1.0.0 Failed to exec generate-parser script
-9 error quick-e2e-test@1.0.0 generate-parser: `cd parser && pegjs ./grammar.pegjs ./parser.js`
-9 error Exit status 2
-10 error Failed at the quick-e2e-test@1.0.0 generate-parser script.
-10 error This is most likely a problem with the quick-e2e-test package,
-10 error not with npm itself.
-10 error Tell the author that this fails on your system:
-10 error     cd parser && pegjs ./grammar.pegjs ./parser.js
-10 error You can get their info via:
-10 error     npm owner ls quick-e2e-test
-10 error There is likely additional logging output above.
-11 error System Linux 3.13.0-37-generic
-12 error command "/home/bitliner/.nvm/v0.10.36/bin/node" "/home/bitliner/.nvm/v0.10.36/bin/npm" "run-script" "generate-parser"
-13 error cwd /home/bitliner/wonderflow/wonderboard/frontend/quick-e2e-test
-14 error node -v v0.10.36
-15 error npm -v 1.4.28
-16 error code ELIFECYCLE
-17 verbose exit [ 1, true ]
+4 verbose publish [ '.' ]
+5 error Failed to parse json
+5 error Unexpected string
+6 error File: /home/bitliner/wonderflow/wonderboard/frontend/quick-e2e-test/package.json
+7 error Failed to parse package.json data.
+7 error package.json must be actual JSON, not just JavaScript.
+7 error
+7 error This is not a bug in npm.
+7 error Tell the package author to fix their package.json file. JSON.parse
+8 error System Linux 3.13.0-37-generic
+9 error command "/home/bitliner/.nvm/v0.10.36/bin/node" "/home/bitliner/.nvm/v0.10.36/bin/npm" "publish"
+10 error cwd /home/bitliner/wonderflow/wonderboard/frontend/quick-e2e-test
+11 error node -v v0.10.36
+12 error npm -v 1.4.28
+13 error file /home/bitliner/wonderflow/wonderboard/frontend/quick-e2e-test/package.json
+14 error code EJSONPARSE
+15 verbose exit [ 1, true ]

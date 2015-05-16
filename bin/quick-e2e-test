@@ -1,3 +1,15 @@
 #!/usr/bin/env node
 
-console.log(process.argv);
+/* jshint ignore:start */
+
+if (process.argv.length < 2) {
+	throw new Error('Please specify a .json config file');
+}
+
+var QuickE2eTest = require('../'),
+	path = require('path'),
+	filepath = path.resolve(process.argv[2]);
+
+
+
+console.log(filepath);
