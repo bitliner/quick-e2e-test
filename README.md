@@ -70,7 +70,7 @@ Example `config.json`:
 {
 	"Login": {
 		"beforeEach": [
-			"go to /login"
+			"users go to /login"
 		],
 		"test": [
 			"when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'"
@@ -81,3 +81,5 @@ Example `config.json`:
 ## 2. Generate end-to-end test 
 
 Run `quick-e2e-test ./config.json` and it will generate in the current folder the file `test.js` containing the end-to-end test.
+
+
