@@ -35,7 +35,7 @@ describe('Quick e2e Test', function() {
 		result = QuickE2eTest.generate(config);
 
 		result = result[0];
-		result = result.replace(/\n+/gi, '').replace(/\n\t\n/gi, '\n').replace(/\t+/gi, '');
+		result = result.replace(/\n+/gi, '').replace(/\n/gi, '\n').replace(/\t+/gi, '').replace(/function \(\)/gi, 'function()');
 		expectedOutput = expectedOutput.replace(/\n+/gi, '').replace(/\t+/gi, '');
 
 		// console.log('result       .', rawString(result));

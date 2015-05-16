@@ -6,8 +6,7 @@ var Parser = require('./lib/parser/parser'),
 	Generator = require('./lib/generator/generator'),
 	Logger = require('logb').getLogger(module.filename),
 	fs = require('fs'),
-	path = require('path'),
-	jformatter = require('jformatter');
+	path = require('path');
 
 
 var QuickE2eTest = {
@@ -22,7 +21,7 @@ var QuickE2eTest = {
 			result.name = testName;
 			result.its = config[testName].test.map(function(scenario) {
 
-				Logger.info('Generating test from', scenario);
+				Logger.debug('Generating test from', scenario);
 
 				return {
 					scenario: scenario,
@@ -37,11 +36,7 @@ var QuickE2eTest = {
 
 		rawTestString = Generator.generate(testMetadata);
 
-		rawTestString = jformatter.format(rawTestString);
-
 		return rawTestString;
-
-
 
 	},
 	generateFile: function(config) {
