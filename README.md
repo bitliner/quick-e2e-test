@@ -17,7 +17,7 @@ This example shows how to specify an end-to-end test in natural language to test
 {
 	"Login": {
 		"beforeEach": [
-			"go to /login"
+			"users go to /login"
 		],
 		"test": [
 			"when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'"
@@ -34,6 +34,10 @@ generates
 'use strict';
 
 describe('Login', function() {
+
+	beforeEach(function() {
+		browser.get('/login');
+	});
 
 	it("when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'", function() {
 
