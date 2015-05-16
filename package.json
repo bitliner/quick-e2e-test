@@ -1,0 +1,19 @@
+{
+  "name": "quick-e2e-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "quick-e2e-test.js",
+  "scripts": {
+    "test": "cd test && mocha ./test.js",
+    "generate-parser": "cd parser && pegjs ./grammar.pegjs ./parser.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.3.1",
+    "logb": "0.0.2"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0"
+  }
+}
