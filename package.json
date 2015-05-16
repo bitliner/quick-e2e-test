@@ -1,6 +1,6 @@
 {
 	"name": "quick-e2e-test",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "It allows you to build end-to-end test specifying just the scenarios to test in natural language (text).",
 	"main": "quick-e2e-test.js",
 	"scripts": {

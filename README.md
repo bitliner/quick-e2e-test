@@ -1,7 +1,9 @@
 quick-e2e-test
 =========================
 
-It allows you to build end-to-end test specifying just the scenarios to test in natural language (text).
+It allows you to build end-to-end test wuth just the scenarios to test in natural language (text).
+
+**Let anyone build end-to-end test! Make developer's life easier!**
 
 # Requirements
 
