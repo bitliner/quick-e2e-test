@@ -1,5 +1,5 @@
 {
-	"QuickE2eTest": {
+	"Login": {
 		"beforeEach": [
 			"go to /login"
 		],

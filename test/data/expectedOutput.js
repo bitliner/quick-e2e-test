@@ -1,9 +1,7 @@
 /* jshint ignore: start */
 'use strict';
 
-describe('QuickE2eTest', function() {
-
-
+describe('Login', function() {
 
 	it("when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'", function() {
 
@@ -16,7 +14,5 @@ describe('QuickE2eTest', function() {
 
 
 	});
-
-
 
 });
