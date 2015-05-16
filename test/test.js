@@ -11,17 +11,20 @@ describe('Quick e2e Test', function() {
 		expectedOutput,
 		rawString;
 
-	beforeEach(function() {
-		config = require('./data/config');
-		expectedOutput = require('fs').readFileSync('./data/expectedOutput.js', {
-			encoding: 'utf8'
-		});
+	beforeEach(function defineHelpers() {
 		rawString = function(str) {
 			return str.replace(/\t/g, '\\t')
 				.replace(/\r\n/g, '\\r\\n')
 				.replace(/\r/g, '\\r')
 				.replace(/\n/g, '\\n');
 		};
+	});
+
+	beforeEach(function initializeData() {
+		config = require('./data/config');
+		expectedOutput = require('fs').readFileSync('./data/expectedOutput.js', {
+			encoding: 'utf8'
+		});
 	});
 
 

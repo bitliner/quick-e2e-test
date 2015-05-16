@@ -8,8 +8,7 @@ if (process.argv.length < 2) {
 
 var QuickE2eTest = require('../'),
 	path = require('path'),
-	filepath = path.resolve(process.argv[2]);
+	filepath = path.resolve(process.argv[2]),
+	config = require(filepath);
 
-
-
-console.log(filepath);
+QuickE2eTest.generateFile(config);
