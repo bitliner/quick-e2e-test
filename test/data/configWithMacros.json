@@ -1,0 +1,17 @@
+{
+	"Login": {
+		"macros": {
+			"signin": [
+				"users send 'username' to '.username'",
+				"users send 'password' to '.password'",
+				"users click on '.submit'"
+			]
+		},
+		"beforeEach": [
+			"users go to '/login'"
+		],
+		"test": [
+			"when users signin, then url is '/product-list'"
+		]
+	}
+}

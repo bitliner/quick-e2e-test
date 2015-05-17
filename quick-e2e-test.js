@@ -22,9 +22,24 @@ var QuickE2eTest = {
 			result.beforeEaches = config[testName].beforeEach.map(function(singleBeforeEach) {
 				return Parser.parse(singleBeforeEach);
 			});
+			if (config[testName].macros) {
+				result.macros = Object.keys(config[testName].macros).map(function(macroName) {
+					// console.log('-->', JSON.stringify(config[testName].macros[macroName].map(function(step) {
+					// 	return Parser.parse(step);
+					// })), null, 4);
+					return {
+						name: macroName,
+						steps: config[testName].macros[macroName].map(function(step) {
+							return Parser.parse(step);
+						})
+					};
+				});
+			}
+
 			result.its = config[testName].test.map(function(scenario) {
 
 				Logger.debug('Generating test from', scenario);
+				// console.log('---->', JSON.stringify(Parser.parse(scenario), null, 4));
 
 				return {
 					scenario: scenario,
