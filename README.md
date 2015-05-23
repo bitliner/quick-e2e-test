@@ -3,6 +3,11 @@ quick-e2e-test
 
 It allows you to build end-to-end test from scenarios expressed in natural language (text).
 
+![preview-image](quick-e2e-test.png "preview-image")
+
+
+# Index
+
 * [Why](#user-content-why)
 * [Requirements](#user-content-requirements)
 * [Simple Example](#user-content-simple-example)
