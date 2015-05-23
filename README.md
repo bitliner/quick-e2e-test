@@ -8,6 +8,7 @@ It allows you to build end-to-end test from scenarios expressed in natural langu
 * [Simple Example](#simple-example)
 * [Installation](#installation)
 * [Usage](#usage)
+* [Current language support](#current-language-support)
 * [Contributors](#contributors)
 * [License](#license)
 
@@ -104,6 +105,24 @@ Run
 ``` 
 
 It will generate the file `test.js` containing the end-to-end test in the current folder.
+
+# Current language support
+
+## Actions
+
+* send <string> to '<css selector>' - to fill the <input> identified by <css selector> with <string>
+* click on '<css selector>' - to click on <css selector>
+* mouseover '<css selector>' 
+* mouseout '<css selector>'
+
+## Conditions
+
+
+
+## Macros
+
+A macro is a sequence of instructions that are assigned to a label. The macro is identified by the label. 
+
 
 # Contributors
 
