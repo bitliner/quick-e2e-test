@@ -3,7 +3,8 @@ quick-e2e-test
 
 It allows you to build end-to-end test from scenarios expressed in natural language (text).
 
-![preview-image](quick-e2e-test.png "preview-image")
+![preview-image-1](https://raw.githubusercontent.com/bitliner/quick-e2e-test/master/quick-end2end-test-preview-image-1.png "preview-image-1")
+![preview-image-1](https://raw.githubusercontent.com/bitliner/quick-e2e-test/master/quick-end2end-test-preview-image-2.png "preview-image-1")
 
 
 # Index
