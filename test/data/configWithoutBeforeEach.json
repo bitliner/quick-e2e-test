@@ -1,6 +1,6 @@
 {
 	"Login": {
-		"helpers": {
+		"macros": {
 			"signin": [
 				"users send 'username' to '.username'",
 				"users send 'password' to '.password'",
@@ -8,8 +8,8 @@
 			]
 		},
 		"test": [
-			"before each go to /login",
-			"when users signin, then url is '/product-list'"
+			"before each go to '/login'",
+			"when users send 'username' to '.username' and send 'password' to '.password' and click '.submit', then url is '/welcome'"
 		]
 	}
 }
