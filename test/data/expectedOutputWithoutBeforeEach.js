@@ -2,19 +2,12 @@
 'use strict';
 
 describe('Login', function() {
-	var signin;
 
 	beforeEach(function() {
 		browser.get('/login');
 	});
 
-	beforeEach(function() {
-
-		browser.get('/login');
-
-	});
-
-	it("when users signin, then url is '/product-list'", function() {
+	it("when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/welcome'", function() {
 
 		element(by.css('.username')).sendKeys('username');
 		element(by.css('.password')).sendKeys('password');
