@@ -1,0 +1,15 @@
+{
+	"Login": {
+		"helpers": {
+			"signin": [
+				"users send 'username' to '.username'",
+				"users send 'password' to '.password'",
+				"users click on '.submit'"
+			]
+		},
+		"test": [
+			"before each go to /login",
+			"when users signin, then url is '/product-list'"
+		]
+	}
+}
