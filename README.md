@@ -3,7 +3,24 @@ quick-e2e-test
 
 It allows you to build end-to-end test from scenarios expressed in natural language (text).
 
-**Let anyone build end-to-end test!** Make developer's life easier!
+* [Why you should use quick-end-2-end-test](#why-you-should-use-quick-end-2-end-test)
+* [Requirements](#requirements)
+* [Simple Example](#simple-example)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributors](#contributors)
+* [License](#license)
+
+# Why you should use quick-end-2-end-test
+
+If you start to build a lot of end-to-end test, you will realize that:
+
+* building end-to-end test is a boring and ripetivive task
+* when the codebase becomes bigger, it can be very hard to manage end-to-end test - e.g. to understand which scenario is covered by test, or to quantify test coverage
+* only developers can mainly build end-to-end test, but developers are a rare and expensive resource, and end-to-end test could be managed by other figures, e.g. other employees 
+
+quick-end-to-end test is born to solve these problems.
+
 
 # Requirements
 
@@ -11,17 +28,15 @@ It allows you to build end-to-end test from scenarios expressed in natural langu
 * nodejs
 * npm
 
-# Example
+# Simple Example
 
 This example shows how to specify an end-to-end test in natural language to test a login form.
 
 ```json
 {
 	"Login": {
-		"beforeEach": [
-			"users go to /login"
-		],
 		"test": [
+			"before each users go to /login",
 			"when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'"
 		]
 	}
@@ -92,7 +107,7 @@ It will generate the file `test.js` containing the end-to-end test in the curren
 
 # Contributors
 
-I am looking for contributors that share tha same need! Fork it, or [contact me](mailto:giovanni.gaglione@gmail.com).
+I am looking for contributors that share tha same problems! Fork it, or [contact me](mailto:giovanni.gaglione@gmail.com).
 
 # License
 
