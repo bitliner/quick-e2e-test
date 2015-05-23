@@ -3,14 +3,14 @@ quick-e2e-test
 
 It allows you to build end-to-end test from scenarios expressed in natural language (text).
 
-* [Why you should use quick-end-2-end-test](#why-you-should-use-quick-end-2-end-test)
-* [Requirements](#requirements)
-* [Simple Example](#simple-example)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Current language support](#current-language-support)
-* [Contributors](#contributors)
-* [License](#license)
+* [Why you should use quick-end-2-end-test](#user-content-why-you-should-use-quick-end-2-end-test)
+* [Requirements](#user-content-requirements)
+* [Simple Example](#user-content-simple-example)
+* [Installation](#user-content-installation)
+* [Usage](#user-content-usage)
+* [Current language support](#user-content-current-language-support)
+* [Contributors](#user-content-contributors)
+* [License](#user-content-license)
 
 # Why you should use quick-end-2-end-test
 
