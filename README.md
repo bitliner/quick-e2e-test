@@ -1,7 +1,9 @@
 quick-e2e-test
 =========================
 
-It allows you to build end-to-end test from scenarios expressed in natural language (text).
+It allows you to build end-to-end test from scenarios expressed in natural language (text). 
+
+Built for [Protractor](http://angular.github.io/protractor/#/) and [AngularJS](https://angularjs.org/).
 
 ![preview-image](https://raw.githubusercontent.com/bitliner/quick-e2e-test/master/quick-e2e-test-preview.png "preview-image")
 
