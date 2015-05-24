@@ -1,7 +1,8 @@
 {
 	"Login": {
 		"test": [
-			"before each go to '/login' when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/welcome'"
+			"before each go to '/login'",
+			"when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/welcome'"
 		]
 	}
 }
