@@ -7,7 +7,7 @@ Built for [Protractor](http://angular.github.io/protractor/#/) and [AngularJS](h
 
 **Quick Example**: test declared in `input.json`  generates `output.js` file.
 
-![preview-image](https://raw.githubusercontent.com/bitliner/quick-e2e-test/master/quick-e2e-test-preview.png "preview-image")
+![preview-image](https://raw.githubusercontent.com/bitliner/quick-e2e-test/master/docs/quick-e2e-test-preview.png "preview-image")
 
 
 # Index
