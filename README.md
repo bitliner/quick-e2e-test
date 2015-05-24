@@ -45,7 +45,7 @@ quick-end-to-end test is born to solve all these problems.
 
 # Tutorial
 
-**1. Create a JSON file representing the end-to-end test**
+## 1. Create a JSON file representing the end-to-end test
 
 Example `config.json`:
 
@@ -59,15 +59,16 @@ Example `config.json`:
 	}
 }
 ```
-**2. Generate end-to-end test**
+## 2. Generate end-to-end test
 
 Run 
 
 ```js
 	quick-e2e-test ./config.json
 ``` 
+## 3. Use the output to run the e2e test
 
-It will generate the file `test.js` containing the end-to-end test in the current folder, as follow:
+The file `test.js` containing the end-to-end test has been generated in the current folder, as follow:
 
 ```js
 /* jshint ignore: start */
@@ -92,6 +93,14 @@ describe('Login', function() {
 
 });
 ```
+
+Now add this file to the spec file list inside the configuration - e.g. *config.js* - file for protractor.
+And then run:
+
+* `webdriver-manager start` - e.g. to start the chrome driver
+* `protractor config.js` - to run test
+
+That's it!
 
 # Current Natural Language Support
 
