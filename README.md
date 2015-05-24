@@ -1,9 +1,35 @@
 quick-e2e-test
 =========================
 
-It allows you to build end-to-end test from scenarios expressed in natural language (text).
+It allows you to build end-to-end test from scenarios expressed in natural language (text). 
 
-**Let anyone build end-to-end test!** Make developer's life easier!
+Built for [Protractor](http://angular.github.io/protractor/#/) and [AngularJS](https://angularjs.org/).
+
+**Quick Example**: test declared in `input.json`  generates `output.js` file.
+
+![preview-image](https://raw.githubusercontent.com/bitliner/quick-e2e-test/master/quick-e2e-test-preview.png "preview-image")
+
+
+# Index
+
+* [Why use it](#user-content-why-use-it)
+* [Requirements](#user-content-requirements)
+* [Installation](#user-content-installation)
+* [Tutorial](#user-content-tutorial)
+* [Current Natural Language Support](#user-content-current-natural-language-support)
+* [Contributors](#user-content-contributors)
+* [License](#user-content-license)
+
+# Why use it
+
+If you start to build a lot of end-to-end test, you will realize that:
+
+* building end-to-end test is a **boring and ripetivive task**
+* when the codebase becomes bigger, it can be very **hard to manage end-to-end test** - e.g. to understand which scenario is covered by test, or to quantify test coverage
+* only developers can mainly build end-to-end test, but developers are a rare and expensive resource, and **end-to-end test could be managed by other figures**, e.g. other employees 
+
+quick-end-to-end test is born to solve all these problems.
+
 
 # Requirements
 
@@ -11,58 +37,13 @@ It allows you to build end-to-end test from scenarios expressed in natural langu
 * nodejs
 * npm
 
-# Example
-
-This example shows how to specify an end-to-end test in natural language to test a login form.
-
-```json
-{
-	"Login": {
-		"beforeEach": [
-			"users go to /login"
-		],
-		"test": [
-			"when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'"
-		]
-	}
-}
-```
-
-generates
-
-
-```js
-/* jshint ignore: start */
-'use strict';
-
-describe('Login', function() {
-
-	beforeEach(function() {
-		browser.get('/login');
-	});
-
-	it("when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'", function() {
-
-
-		element(by.css('.username')).sendKeys('username');
-		element(by.css('.password')).sendKeys('password');
-		element(by.css('.submit')).click();
-
-		expect(browser.getUrl())['toBe']('/product-list');
-
-
-	});
-
-});
-```
-
 
 
 # Installation
 
 `npm install -g quick-e2e-test`
 
-# Usage
+# Tutorial
 
 **1. Create a JSON file representing the end-to-end test**
 
@@ -71,11 +52,9 @@ Example `config.json`:
 ```json
 {
 	"Login": {
-		"beforeEach": [
-			"users go to /login"
-		],
 		"test": [
-			"when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/product-list'"
+			"before each go to '/login'",
+			"when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/welcome'"
 		]
 	}
 }
@@ -88,11 +67,60 @@ Run
 	quick-e2e-test ./config.json
 ``` 
 
-It will generate the file `test.js` containing the end-to-end test in the current folder.
+It will generate the file `test.js` containing the end-to-end test in the current folder, as follow:
+
+```js
+/* jshint ignore: start */
+'use strict';
+
+describe('Login', function() {
+
+	beforeEach(function() {
+		browser.get('/login');
+	});
+
+	it("when users send 'username' to '.username' and send 'password' to '.password' and click on '.submit', then url is '/welcome'", function() {
+
+		element(by.css('.username')).sendKeys('username');
+		element(by.css('.password')).sendKeys('password');
+		element(by.css('.submit')).click();
+
+		expect(browser.getUrl())['toBe']('/welcome');
+
+
+	});
+
+});
+```
+
+# Current Natural Language Support
+
+Each scenario can be divided into the 2 elements:
+
+* actions: all the actions that cause the scenario - e.g. "when users go to '/login' and click on '.login'"
+* post-condition: all the conditions that must be verified after all the actions has been executed
+
+## Actions 
+
+Currently, you can specify following actions:
+
+* send <string> to '<css selector>' - to fill the <input> identified by <css selector> with <string>
+* click on '<css selector>' - to click on <css selector>
+* mouseover '<css selector>' (TODO) 
+* mouseout '<css selector>' (TODO)
+
+## Conditions
+
+TODO
+
+## Macros
+
+A macro is a sequence of instructions that are assigned to a label. The macro is identified by the label. 
+
 
 # Contributors
 
-I am looking for contributors that share tha same need! Fork it, or [contact me](mailto:giovanni.gaglione@gmail.com).
+I am looking for contributors that share tha same problems! Fork it, or [contact me](mailto:giovanni.gaglione@gmail.com).
 
 # License
 
