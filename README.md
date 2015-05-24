@@ -126,6 +126,59 @@ TODO
 
 A macro is a sequence of instructions that are assigned to a label. The macro is identified by the label. 
 
+### Example
+
+```json
+{
+	"Login": {
+		"macros": {
+			"signin": [
+				"users send 'username' to '.username'",
+				"users send 'password' to '.password'",
+				"users click on '.submit'"
+			]
+		},
+		"test": [
+			"before each users go to '/login'",
+			"when users signin, then url is '/product-list'"
+		]
+	}
+}
+```
+
+generates
+
+```js
+/* jshint ignore: start */
+'use strict';
+
+describe('Login', function() {
+	var signin;
+
+	beforeEach(function() {
+		browser.get('/login');
+	});
+
+	beforeEach(function() {
+		signin = function() {
+			element(by.css('.username')).sendKeys('username');
+			element(by.css('.password')).sendKeys('password');
+			element(by.css('.submit')).click();
+		};
+	});
+
+	it("when users signin, then url is '/product-list'", function() {
+
+		signin();
+
+		expect(browser.getUrl())['toBe']('/product-list');
+
+
+	});
+
+});
+```
+
 
 # Contributors
 
