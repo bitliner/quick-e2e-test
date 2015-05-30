@@ -21,27 +21,27 @@
 7 verbose parsed url   href: '.' }
 8 silly lockFile 3a52ce78- .
 9 verbose lock . /home/bitliner/.npm/3a52ce78-.lock
-10 verbose tar pack [ '/home/bitliner/.npm/quick-e2e-test/1.0.0/package.tgz', '.' ]
-11 verbose tarball /home/bitliner/.npm/quick-e2e-test/1.0.0/package.tgz
+10 verbose tar pack [ '/home/bitliner/.npm/quick-e2e-test/2.0.0/package.tgz', '.' ]
+11 verbose tarball /home/bitliner/.npm/quick-e2e-test/2.0.0/package.tgz
 12 verbose folder .
-13 info prepublish quick-e2e-test@1.0.0
+13 info prepublish quick-e2e-test@2.0.0
 14 silly lockFile 1f1177db-tar tar://.
 15 verbose lock tar://. /home/bitliner/.npm/1f1177db-tar.lock
-16 silly lockFile f535e0c0-quick-e2e-test-1-0-0-package-tgz tar:///home/bitliner/.npm/quick-e2e-test/1.0.0/package.tgz
-17 verbose lock tar:///home/bitliner/.npm/quick-e2e-test/1.0.0/package.tgz /home/bitliner/.npm/f535e0c0-quick-e2e-test-1-0-0-package-tgz.lock
+16 silly lockFile 3f203a67-quick-e2e-test-2-0-0-package-tgz tar:///home/bitliner/.npm/quick-e2e-test/2.0.0/package.tgz
+17 verbose lock tar:///home/bitliner/.npm/quick-e2e-test/2.0.0/package.tgz /home/bitliner/.npm/3f203a67-quick-e2e-test-2-0-0-package-tgz.lock
 18 silly lockFile 1f1177db-tar tar://.
 19 silly lockFile 1f1177db-tar tar://.
-20 silly lockFile f535e0c0-quick-e2e-test-1-0-0-package-tgz tar:///home/bitliner/.npm/quick-e2e-test/1.0.0/package.tgz
-21 silly lockFile f535e0c0-quick-e2e-test-1-0-0-package-tgz tar:///home/bitliner/.npm/quick-e2e-test/1.0.0/package.tgz
-22 silly lockFile 18d3aae6-npm-quick-e2e-test-1-0-0-package /home/bitliner/.npm/quick-e2e-test/1.0.0/package
-23 verbose lock /home/bitliner/.npm/quick-e2e-test/1.0.0/package /home/bitliner/.npm/18d3aae6-npm-quick-e2e-test-1-0-0-package.lock
-24 silly lockFile 18d3aae6-npm-quick-e2e-test-1-0-0-package /home/bitliner/.npm/quick-e2e-test/1.0.0/package
-25 silly lockFile 18d3aae6-npm-quick-e2e-test-1-0-0-package /home/bitliner/.npm/quick-e2e-test/1.0.0/package
+20 silly lockFile 3f203a67-quick-e2e-test-2-0-0-package-tgz tar:///home/bitliner/.npm/quick-e2e-test/2.0.0/package.tgz
+21 silly lockFile 3f203a67-quick-e2e-test-2-0-0-package-tgz tar:///home/bitliner/.npm/quick-e2e-test/2.0.0/package.tgz
+22 silly lockFile 17a6bb53-npm-quick-e2e-test-2-0-0-package /home/bitliner/.npm/quick-e2e-test/2.0.0/package
+23 verbose lock /home/bitliner/.npm/quick-e2e-test/2.0.0/package /home/bitliner/.npm/17a6bb53-npm-quick-e2e-test-2-0-0-package.lock
+24 silly lockFile 17a6bb53-npm-quick-e2e-test-2-0-0-package /home/bitliner/.npm/quick-e2e-test/2.0.0/package
+25 silly lockFile 17a6bb53-npm-quick-e2e-test-2-0-0-package /home/bitliner/.npm/quick-e2e-test/2.0.0/package
 26 silly lockFile 3a52ce78- .
 27 silly lockFile 3a52ce78- .
 28 silly publish { name: 'quick-e2e-test',
-28 silly publish   version: '1.0.0',
-28 silly publish   description: 'quick-e2e-test =========================',
+28 silly publish   version: '2.0.0',
+28 silly publish   description: 'It allows you to build end-to-end test specifying just the scenarios to test in natural language (text).',
 28 silly publish   main: 'quick-e2e-test.js',
 28 silly publish   scripts:
 28 silly publish    { test: 'cd test && mocha ./test.js',
@@ -49,37 +49,37 @@
 28 silly publish   bin: { 'quick-e2e-test': 'bin/quick-e2e-test' },
 28 silly publish   author: '',
 28 silly publish   license: 'ISC',
-28 silly publish   dependencies: { ejs: '^2.3.1', logb: '0.0.2' },
+28 silly publish   dependencies: { ejs: '^2.3.1', jformatter: '^1.0.8', logb: '0.0.2' },
 28 silly publish   devDependencies: { chai: '^2.3.0' },
-28 silly publish   readme: 'quick-e2e-test\n=========================\n\nIt allows you to build end-to-end test specifying just the scnearios to test in natural language (text).\n\n# Requirements\n\n* [protractor](http://angular.github.io/protractor/#/) - this module is build to work with protrator - but it can be easily extended to work with other frameworks for end-to-end testing\n* nodejs\n* npm\n\n# Example\n\nThis example shows how to specify an end-to-end test in natural language to test a login form.\n\n```json\n{\n\t"Login": {\n\t\t"beforeEach": [\n\t\t\t"go to /login"\n\t\t],\n\t\t"test": [\n\t\t\t"when users send \'username\' to \'.username\' and send \'password\' to \'.password\' and click on \'.submit\', then url is \'/product-list\'"\n\t\t]\n\t}\n}\n```\n\ngenerates\n\n\n```js\n/* jshint ignore: start */\n\'use strict\';\n\ndescribe(\'Login\', function() {\n\n\tit("when users send \'username\' to \'.username\' and send \'password\' to \'.password\' and click on \'.submit\', then url is \'/product-list\'", function() {\n\n\n\t\telement(by.css(\'.username\')).sendKeys(\'username\');\n\t\telement(by.css(\'.password\')).sendKeys(\'password\');\n\t\telement(by.css(\'.submit\')).click();\n\n\t\texpect(browser.getUrl())[\'toBe\'](\'/product-list\');\n\n\n\t});\n\n});\n```\n\n\n\n# Installation\n\n`npm install -g quick-e2e-test`\n\n# Usage\n\n## 1. Specify the end-to-end test in a JSON file\n\nExample `config.json`:\n\n```json\n{\n\t"Login": {\n\t\t"beforeEach": [\n\t\t\t"go to /login"\n\t\t],\n\t\t"test": [\n\t\t\t"when users send \'username\' to \'.username\' and send \'password\' to \'.password\' and click on \'.submit\', then url is \'/product-list\'"\n\t\t]\n\t}\n}\n```\n## 2. Generate end-to-end test \n\nRun `quick-e2e-test ./config.json` and it will generate in the current folder the file for e2e-test.\n',
+28 silly publish   readme: 'quick-e2e-test\n=========================\n\nIt allows you to build end-to-end test from scenarios expressed in natural language (text). \n\nBuilt for [Protractor](http://angular.github.io/protractor/#/) and [AngularJS](https://angularjs.org/).\n\n**Quick Example**: test declared in `input.json`  generates `output.js` file.\n\n![preview-image](https://raw.githubusercontent.com/bitliner/quick-e2e-test/master/docs/quick-e2e-test-preview.png "preview-image")\n\n\n# Index\n\n* [Why use it](#user-content-why-use-it)\n* [Requirements](#user-content-requirements)\n* [Installation](#user-content-installation)\n* [Tutorial](#user-content-tutorial)\n* [Current Natural Language Support](#user-content-current-natural-language-support)\n* [Contributors](#user-content-contributors)\n* [License](#user-content-license)\n\n# Why use it\n\nIf you start to build a lot of end-to-end test, you will realize that:\n\n* building end-to-end test is a **boring and ripetivive task**\n* when the codebase becomes bigger, it can be very **hard to manage end-to-end test** - e.g. to understand which scenario is covered by test, or to quantify test coverage\n* only developers can mainly build end-to-end test, but developers are a rare and expensive resource, and **end-to-end test could be managed by other figures**, e.g. other employees \n\nquick-end-to-end test is born to solve all these problems.\n\n\n# Requirements\n\n* [protractor](http://angular.github.io/protractor/#/) - this module generates test to run with protrator - but it can be easily extended to work with other frameworks for end-to-end testing\n* nodejs\n* npm\n\n\n\n# Installation\n\n`npm install -g quick-e2e-test`\n\n# Tutorial\n\n## 1. Create a JSON file representing the end-to-end test\n\nExample `config.json`:\n\n```json\n{\n\t"Login": {\n\t\t"test": [\n\t\t\t"before each go to \'/login\'",\n\t\t\t"when users send \'username\' to \'.username\' and send \'password\' to \'.password\' and click on \'.submit\', then url is \'/welcome\'"\n\t\t]\n\t}\n}\n```\n## 2. Generate end-to-end test\n\nRun \n\n```js\n\tquick-e2e-test ./config.json\n``` \n## 3. Use the output to run the e2e test\n\nThe file `test.js` containing the end-to-end test has been generated in the current folder, as follow:\n\n```js\n/* jshint ignore: start */\n\'use strict\';\n\ndescribe(\'Login\', function() {\n\n\tbeforeEach(function() {\n\t\tbrowser.get(\'/login\');\n\t});\n\n\tit("when users send \'username\' to \'.username\' and send \'password\' to \'.password\' and click on \'.submit\', then url is \'/welcome\'", function() {\n\n\t\telement(by.css(\'.username\')).sendKeys(\'username\');\n\t\telement(by.css(\'.password\')).sendKeys(\'password\');\n\t\telement(by.css(\'.submit\')).click();\n\n\t\texpect(browser.getUrl())[\'toBe\'](\'/welcome\');\n\n\n\t});\n\n});\n```\n\nNow add this file to the spec file list inside the configuration - e.g. *config.js* - file for protractor.\nAnd then run:\n\n* `webdriver-manager start` - e.g. to start the chrome driver\n* `protractor config.js` - to run test\n\nThat\'s it!\n\n# Current Natural Language Support\n\nEach scenario can be divided into the 2 elements:\n\n* actions: all the actions that cause the scenario - e.g. "when users go to \'/login\' and click on \'.login\'"\n* post-condition: all the conditions that must be verified after all the actions has been executed\n\n## Actions \n\nCurrently, you can specify following actions:\n\n* send <string> to \'<css selector>\' - to fill the <input> identified by <css selector> with <string>\n* click on \'<css selector>\' - to click on <css selector>\n* mouseover \'<css selector>\' (TODO) \n* mouseout \'<css selector>\' (TODO)\n\n## Conditions\n\nTODO\n\n## Macros\n\nA macro is a sequence of instructions that are assigned to a label. The macro is identified by the label. \n\n### Example\n\n```json\n{\n\t"Login": {\n\t\t"macros": {\n\t\t\t"signin": [\n\t\t\t\t"users send \'username\' to \'.username\'",\n\t\t\t\t"users send \'password\' to \'.password\'",\n\t\t\t\t"users click on \'.submit\'"\n\t\t\t]\n\t\t},\n\t\t"test": [\n\t\t\t"before each users go to \'/login\'",\n\t\t\t"when users signin, then url is \'/product-list\'"\n\t\t]\n\t}\n}\n```\n\ngenerates\n\n```js\n/* jshint ignore: start */\n\'use strict\';\n\ndescribe(\'Login\', function() {\n\tvar signin;\n\n\tbeforeEach(function() {\n\t\tbrowser.get(\'/login\');\n\t});\n\n\tbeforeEach(function() {\n\t\tsignin = function() {\n\t\t\telement(by.css(\'.username\')).sendKeys(\'username\');\n\t\t\telement(by.css(\'.password\')).sendKeys(\'password\');\n\t\t\telement(by.css(\'.submit\')).click();\n\t\t};\n\t});\n\n\tit("when users signin, then url is \'/product-list\'", function() {\n\n\t\tsignin();\n\n\t\texpect(browser.getUrl())[\'toBe\'](\'/product-list\');\n\n\n\t});\n\n});\n```\n\n\n# Contributors\n\nI am looking for contributors that share tha same problems! Fork it, or [contact me](mailto:giovanni.gaglione@gmail.com).\n\n# License\n\nThe MIT License (MIT)\n\nCopyright (c) 2011-2015 Twitter, Inc\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the "Software"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.',
 28 silly publish   readmeFilename: 'README.md',
-28 silly publish   gitHead: 'a1c7cef06d3d6735a6ff6b257f8d59b4314ad444',
-28 silly publish   _id: 'quick-e2e-test@1.0.0',
-28 silly publish   _shasum: '32104522551411d336c1ec15e5e49d51344e3cdd',
+28 silly publish   gitHead: '235513d0281a2c676405e8b1b7db82af37e85278',
+28 silly publish   _id: 'quick-e2e-test@2.0.0',
+28 silly publish   _shasum: 'b8c72970e331217bafc38bc0d09a4f4f30e78bb9',
 28 silly publish   _from: '.' }
 29 verbose request where is /quick-e2e-test
 30 verbose request registry https://registry.npmjs.org/
-31 verbose request id 80dac93f474108fe
+31 verbose request id a5c411249ef91b55
 32 verbose url raw /quick-e2e-test
 33 verbose url resolving [ 'https://registry.npmjs.org/', './quick-e2e-test' ]
 34 verbose url resolved https://registry.npmjs.org/quick-e2e-test
 35 verbose request where is https://registry.npmjs.org/quick-e2e-test
-36 info trying registry request attempt 1 at 17:38:39
+36 info trying registry request attempt 1 at 16:10:18
 37 http PUT https://registry.npmjs.org/quick-e2e-test
 38 http 403 https://registry.npmjs.org/quick-e2e-test
 39 verbose headers { 'content-type': 'application/json',
 39 verbose headers   'cache-control': 'max-age=60',
 39 verbose headers   'content-length': '95',
 39 verbose headers   'accept-ranges': 'bytes',
-39 verbose headers   date: 'Sat, 16 May 2015 15:38:40 GMT',
+39 verbose headers   date: 'Sat, 30 May 2015 14:10:20 GMT',
 39 verbose headers   via: '1.1 varnish',
 39 verbose headers   connection: 'keep-alive',
-39 verbose headers   'x-served-by': 'cache-ams4143-AMS',
+39 verbose headers   'x-served-by': 'cache-ams4120-AMS',
 39 verbose headers   'x-cache': 'MISS',
 39 verbose headers   'x-cache-hits': '0',
-39 verbose headers   'x-timer': 'S1431790719.514562,VS0,VE811' }
+39 verbose headers   'x-timer': 'S1432995019.151194,VS0,VE993' }
 40 error publish Failed PUT 403
-41 error Error: "You cannot publish over the previously published version 1.0.0." : quick-e2e-test
+41 error Error: "You cannot publish over the previously published version 2.0.0." : quick-e2e-test
 41 error     at RegClient.<anonymous> (/home/bitliner/.nvm/v0.10.36/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
 41 error     at Request._callback (/home/bitliner/.nvm/v0.10.36/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
 41 error     at Request.self.callback (/home/bitliner/.nvm/v0.10.36/lib/node_modules/npm/node_modules/request/request.js:236:22)
